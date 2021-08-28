@@ -1,14 +1,13 @@
-
 import './App.scss';
 import Header from '../header/Header';
+import CardForm from '../credit-card/CardForm';
 
 function App() {
-
   return (
     <>
       <Header />
       <div className="container">
-        <h1 className="main_title">Welcome!</h1>
+        <CardForm />
       </div>
     </>
   );

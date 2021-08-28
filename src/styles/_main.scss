@@ -8,6 +8,16 @@ body {
   font-size: 16px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
 a {
   color: $primary;
   text-decoration: none;
@@ -19,10 +29,6 @@ a:active {
 }
 
 .btn {
-  // background: none;
-  // border: none;
-  // cursor: pointer;
-
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -37,6 +43,7 @@ a:active {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
+  cursor: pointer;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -50,6 +57,10 @@ a:active {
   background-color: $primary;
   border: 1px solid $primary;
   color: $secondary;
+}
+
+.btn_primary:hover {
+  box-shadow: 0px 4px 8px 0px #00000040;
 }
 
 .btn_secondary {
@@ -68,7 +79,7 @@ a:active {
 .container {
   margin: 0 auto;
   padding: 2rem;
-  width: 600px;
+  width: 500px;
 }
 
 .container_fluid {
@@ -82,4 +93,49 @@ a:active {
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
+}
+
+.flex_section_50 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+}
+
+.w_50 {
+  width: 50%;
+}
+
+// FORM styles
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+.form_group {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+.form_control {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0rem;
+  font-size: 1.1rem;
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: none;
+  border-bottom: 2px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form_control:focus {
+  border-bottom: 2px solid $primary;
+  outline: none;
+  transition: border-bottom-color 0.15s ease-in-out;
 }
