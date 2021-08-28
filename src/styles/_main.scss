@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: roboto, arial, helvetica, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: $secondary;
+}
+
+.btn {
+  // background: none;
+  // border: none;
+  // cursor: pointer;
+
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.25rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn_icon {
+  background: none;
+  padding: 0;
+}
+
+.btn_primary {
+  background-color: $primary;
+  border: 1px solid $primary;
+  color: $secondary;
+}
+
+.btn_secondary {
+  background-color: $secondary;
+  border: 1px solid $secondary;
+  color: $white;
+}
+
+.main_title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 600px;
+}
+
+.container_fluid {
+  margin: 0 auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+.flex_row {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}

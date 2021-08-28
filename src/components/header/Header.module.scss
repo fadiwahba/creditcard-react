@@ -1,0 +1,33 @@
+@import '../../styles/colors';
+
+.header_wrapper {
+  width: 100%;
+  padding: 1rem;
+  background-color: $secondary;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu_burger_icon {
+  color: $white;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header_logo {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+.header_logo svg {
+  width: 100px;
+  padding: 1rem;
+  color: $primary;
+  display: inline-block;
+}

@@ -1,0 +1,56 @@
+@import '../../styles/colors';
+
+.menu {
+  position: absolute;
+  width: 100%;
+  padding: 2rem;
+  background: $secondary;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transition: transform 0.35s;
+  transform: translate(-100%, 0);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: $white;
+  display: flex;
+  flex-flow: column;
+  font-size: 2rem;
+}
+.menu_back_icon {
+  color: $white;
+  padding: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.title {
+  text-align: center;
+  width: 100%;
+  margin-left: 2rem;
+}
+.menu_content {
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+.menu ul {
+  margin-bottom: 2rem;
+}
+.menu li {
+  padding: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+.menu li a {
+  color: $primary;
+}
+.menu li a:hover,
+.menu li a:active {
+  color: $white;
+}
+.menu_show {
+  transform: none;
+}
