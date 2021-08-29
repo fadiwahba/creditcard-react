@@ -1,8 +1,9 @@
 import styles from './CardForm.module.scss';
 import NumberFormat from 'react-number-format';
-import { useState } from 'react';
+import dayjs from 'dayjs';
+import React, { useState } from 'react';
 import { CreditCard } from '../models/types';
-import { MdSimCard } from 'react-icons/md';
+import { MdSimCard, MdInfoOutline } from 'react-icons/md';
 
 const CardForm: React.FC = () => {
   const [cardNumber, setCardNumber] = useState('');
@@ -21,15 +22,18 @@ const CardForm: React.FC = () => {
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const month = expiryDate.substring(0, 2);
+    const year = expiryDate.substring(3, 5);
+    const dateString = `20${year}/${month}/01`; // i.e: "YYYY/MM/DD"
     const creditCard: CreditCard = {
-      cardNumber,
-      cvcNumber,
-      expiryDate,
+      cardNumber: cardNumber,
+      cvcNumber: cvcNumber,
+      expiryDate: dayjs(dateString) // create a dayJS Date object from the dateString
     };
     console.log('Credit Card Submited: ', creditCard);
   };
 
-  const limit = (val: string, max: string) => {
+  const validateMonthVal = (val: string, max: string): string => {
     if (val.length === 1 && val[0] > max[0]) {
       val = '0' + val;
     }
@@ -44,10 +48,24 @@ const CardForm: React.FC = () => {
     return val;
   };
 
-  const cardExpiry = (val: string) => {
-    let month = limit(val.substring(0, 2), '12');
-    let year = val.substring(2, 4);
+  const validateYearVal = (val: string): string => {
+    if (val.length === 1) {
+      val = '0' + val;
+    }
+    if (val.length === 2) {
+      let currentDate = dayjs(new Date());
+      let valDate = dayjs('20' + val); // assuming that a "year" value starts from 2000
+      if (valDate.isBefore(currentDate)) {
+        valDate = currentDate; // make current year is the minimum value
+      }
+      val = valDate.format('YY');
+    }
+    return val;
+  };
 
+  const cardExpiry = (val: string) => {
+    let month = validateMonthVal(val.substring(0, 2), '12');
+    let year = validateYearVal(val.substring(2, 4));
     return month + (year.length ? '/' + year : '');
   };
 
@@ -99,6 +117,10 @@ const CardForm: React.FC = () => {
             placeholder="0000 0000 0000 0000"
             required
           />
+          <div className="hint_text">
+            <MdInfoOutline className="text_info_color icon" />
+            <span>Must be 16 numbers.</span>
+          </div>
         </div>
         <div className="form_group">
           <label htmlFor="cvcNumber">CVC</label>
@@ -113,6 +135,10 @@ const CardForm: React.FC = () => {
             placeholder="000"
             required
           />
+          <div className="hint_text">
+            <MdInfoOutline className="text_info_color icon" />
+            <span>Must be 3 numbers.</span>
+          </div>
         </div>
         <div className="form_group">
           <label htmlFor="expiryDate">Expiry</label>
@@ -127,6 +153,13 @@ const CardForm: React.FC = () => {
             placeholder="MM/YY"
             required
           />
+          <div className="hint_text">
+            <MdInfoOutline className="text_info_color icon" />
+            <span>
+              A month must be any value between 1 to 12 and a year cannot be
+              before the current year.
+            </span>
+          </div>
         </div>
 
         <button type="submit" className="btn btn_primary">

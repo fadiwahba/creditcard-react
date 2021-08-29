@@ -6,6 +6,7 @@ html,
 body {
   font-family: roboto, arial, helvetica, sans-serif;
   font-size: 16px;
+  background-color: #f5f5f5;
 }
 
 h1,
@@ -48,6 +49,14 @@ a:active {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.text_primary_color {
+  color: $primary
+}
+
+.text_info_color {
+  color: $info
+}
+
 .btn_icon {
   background: none;
   padding: 0;
@@ -77,15 +86,10 @@ a:active {
 }
 
 .container {
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 2rem;
   width: 500px;
-}
-
-.container_fluid {
-  margin: 0 auto;
-  padding: 1rem;
-  width: 100%;
+  background-color: $white;
 }
 
 .flex_row {
@@ -112,6 +116,8 @@ label {
   display: inline-block;
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
+  font-weight: bold;
+  color: #666666;
 }
 .form_group {
   padding: 1rem;
@@ -123,10 +129,11 @@ label {
   display: block;
   width: 100%;
   padding: 0.5rem 0rem;
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-family: 'Roboto Mono', monospace;
+  font-weight: 100;
   line-height: 1.5;
-  color: #495057;
+  color: $black;
   background-color: #fff;
   background-clip: padding-box;
   border: none;
@@ -138,4 +145,15 @@ label {
   border-bottom: 2px solid $primary;
   outline: none;
   transition: border-bottom-color 0.15s ease-in-out;
+}
+
+.hint_text {
+  font-size: 0.6rem;
+  font-style: italic;
+  padding: 1rem 0;
+  color: #ccc;
+}
+
+.hint_text .icon {
+  margin-right: 0.25rem;
 }

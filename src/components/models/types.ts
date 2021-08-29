@@ -1,5 +1,6 @@
+import dayjs from 'dayjs';
 export interface CreditCard {
   cardNumber: string;
   cvcNumber: string;
-  expiryDate: string;
+  expiryDate: Date | dayjs.Dayjs;
 }
