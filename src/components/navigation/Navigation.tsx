@@ -22,7 +22,7 @@ const Navigation: React.FC<IProps> = ({ isMenuOpen, onMenuCloseClick }) => {
         isMenuOpen ? styles.menu + ' ' + styles.menu_show : styles.menu
       }
     >
-      <div className="flex_row">
+      <div className="grid">
         <button
           className={styles.menu_back_icon + ' btn btn_icon'}
           onClick={(e) => handleMenuBtnClick(e)}
