@@ -26,8 +26,8 @@ const CardForm: React.FC = () => {
     const year = expiryDate.substring(3, 5);
     const dateString = `20${year}/${month}/01`; // i.e: "YYYY/MM/DD"
     const creditCard: CreditCard = {
-      cardNumber: cardNumber,
-      cvcNumber: cvcNumber,
+      cardNumber: Number(cardNumber.replace(/ /g, '')),
+      cvcNumber: Number(cvcNumber),
       expiryDate: dayjs(dateString), // create a dayJS Date object from the dateString
     };
     console.log('Credit Card Submited: ', creditCard);
@@ -74,10 +74,11 @@ const CardForm: React.FC = () => {
       <h1 className="main_title">Register Card Form</h1>
       <div className="grid">
         <div className="grid_section">
-          <form onSubmit={handleSubmit}>
+          <form data-testid="card_form" onSubmit={handleSubmit}>
             <div className="form_group">
-              <label htmlFor="cardNumber">Credit Card Number</label>
+              <label htmlFor="cardNumber">Credit Card Number *</label>
               <NumberFormat
+                data-testid="card_number_field"
                 className="form_control"
                 value={cardNumber}
                 onChange={onCardNumberChange}
@@ -94,8 +95,9 @@ const CardForm: React.FC = () => {
               </div>
             </div>
             <div className="form_group">
-              <label htmlFor="cvcNumber">CVC</label>
+              <label htmlFor="cvcNumber">CVC *</label>
               <NumberFormat
+                data-testid="cvc_number_field"
                 className="form_control"
                 value={cvcNumber}
                 onChange={onCvcNumberChange}
@@ -112,8 +114,9 @@ const CardForm: React.FC = () => {
               </div>
             </div>
             <div className="form_group">
-              <label htmlFor="expiryDate">Expiry</label>
+              <label htmlFor="expiryDate">Expiry *</label>
               <NumberFormat
+                data-testid="expiry_date_field"
                 className="form_control"
                 value={expiryDate}
                 onChange={onExpiryDateChange}
@@ -133,13 +136,22 @@ const CardForm: React.FC = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn_primary">
+            <button
+              data-testid="submit_button"
+              type="submit"
+              className="btn btn_primary"
+              disabled={
+                cardNumber.length === 0 ||
+                cvcNumber.length === 0 ||
+                expiryDate.length === 0
+              }
+            >
               Submit
             </button>
           </form>
         </div>
         <div className="grid_section">
-          <div className={styles.card_shape}>
+          <div className={styles.card_shape} data-testid="card_shape">
             <div className={styles.card_header}>
               <div className={styles.card_logo}>
                 <svg viewBox="15 24 63 14" id="icon-asb-logo-colour">
