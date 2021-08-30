@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/creditcard-react/static/css/main.b3f7c621.chunk.css",
+    "main.js": "/creditcard-react/static/js/main.33ef2263.chunk.js",
+    "main.js.map": "/creditcard-react/static/js/main.33ef2263.chunk.js.map",
+    "runtime-main.js": "/creditcard-react/static/js/runtime-main.594c854a.js",
+    "runtime-main.js.map": "/creditcard-react/static/js/runtime-main.594c854a.js.map",
+    "static/js/2.3df45f5e.chunk.js": "/creditcard-react/static/js/2.3df45f5e.chunk.js",
+    "static/js/2.3df45f5e.chunk.js.map": "/creditcard-react/static/js/2.3df45f5e.chunk.js.map",
+    "static/js/3.6d1a15c3.chunk.js": "/creditcard-react/static/js/3.6d1a15c3.chunk.js",
+    "static/js/3.6d1a15c3.chunk.js.map": "/creditcard-react/static/js/3.6d1a15c3.chunk.js.map",
+    "index.html": "/creditcard-react/index.html",
+    "static/css/main.b3f7c621.chunk.css.map": "/creditcard-react/static/css/main.b3f7c621.chunk.css.map",
+    "static/js/2.3df45f5e.chunk.js.LICENSE.txt": "/creditcard-react/static/js/2.3df45f5e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.594c854a.js",
+    "static/js/2.3df45f5e.chunk.js",
+    "static/css/main.b3f7c621.chunk.css",
+    "static/js/main.33ef2263.chunk.js"
+  ]
+}
