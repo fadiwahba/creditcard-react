@@ -3,10 +3,6 @@ import { MdMenu } from 'react-icons/md';
 import { useState } from 'react';
 import Navigation from '../navigation/Navigation';
 
-// export interface IHeaderProps {
-//   isMenuOpen: boolean;
-//   onMenuBtnClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-// }
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
